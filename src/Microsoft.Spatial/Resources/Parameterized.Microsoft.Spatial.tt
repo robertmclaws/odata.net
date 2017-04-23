@@ -1,4 +1,4 @@
-﻿<#@ include file="..\..\tools\StringResourceGenerator\StringsClassGenerator.ttinclude" #>
+﻿<#@ include file="..\..\..\tools\StringResourceGenerator\StringsClassGenerator.ttinclude" #>
 <#+
 public static class Configuration
 {

@@ -61,7 +61,7 @@ namespace Microsoft.OData.Json
             {
                 IDictionary<string, object> jsonObject = ReadObjectValue(jsonReader, insideJsonObjectValue, inputContext, recursionDepth);
                 Microsoft.Spatial.GeoJsonObjectFormatter jsonObjectFormatter =
-                    Microsoft.Spatial.SpatialImplementation.CurrentImplementation.CreateGeoJsonObjectFormatter();
+                    Microsoft.Spatial.SpatialImplementation.Current.CreateGeoJsonObjectFormatter();
                 if (EdmLibraryExtensions.IsGeographyType(expectedValueTypeReference))
                 {
                     spatialValue = jsonObjectFormatter.Read<Microsoft.Spatial.Geography>(jsonObject);

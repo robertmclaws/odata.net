@@ -24,7 +24,7 @@ namespace Microsoft.Spatial
         /// <returns>The created GmlFormatter implementation.</returns>
         public static GmlFormatter Create()
         {
-            return SpatialImplementation.CurrentImplementation.CreateGmlFormatter();
+            return SpatialImplementation.Current.CreateGmlFormatter();
         }
     }
 }

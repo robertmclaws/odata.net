@@ -23,7 +23,7 @@ namespace Microsoft.OData.UriParser
         {
             get
             {
-                return SpatialImplementation.CurrentImplementation.CreateWellKnownTextSqlFormatter(false /*allowOnlyTwoDimensions*/);
+                return SpatialImplementation.Current.CreateWellKnownTextSqlFormatter(false /*allowOnlyTwoDimensions*/);
             }
         }
 

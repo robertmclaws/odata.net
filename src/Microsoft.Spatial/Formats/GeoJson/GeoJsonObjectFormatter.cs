@@ -16,7 +16,7 @@ namespace Microsoft.Spatial
         /// <returns>The created <see cref="T:Microsoft.Spatial.GeoJsonObjectFormatter" /> implementation.</returns>
         public static GeoJsonObjectFormatter Create()
         {
-            return SpatialImplementation.CurrentImplementation.CreateGeoJsonObjectFormatter();
+            return SpatialImplementation.Current.CreateGeoJsonObjectFormatter();
         }
 
         /// <summary>Reads from the source.</summary>

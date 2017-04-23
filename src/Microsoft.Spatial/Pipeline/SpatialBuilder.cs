@@ -68,7 +68,7 @@ namespace Microsoft.Spatial
         /// <returns>The created SpatialBuilder implementation.</returns>
         public static SpatialBuilder Create()
         {
-            return SpatialImplementation.CurrentImplementation.CreateBuilder();
+            return SpatialImplementation.Current.CreateBuilder();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Microsoft.Spatial
 
     /// <summary>
     /// Class responsible for knowing how to create the Geography and Geometry builders for
-    /// a particular implemenation of Spatial types
+    /// a particular implementation of Spatial types
     /// </summary>
     public abstract class SpatialImplementation
     {
@@ -18,7 +18,7 @@ namespace Microsoft.Spatial
         private static SpatialImplementation spatialImplementation = new DataServicesSpatialImplementation();
 
         /// <summary> Returns an instance of SpatialImplementation that is currently being used. </summary>
-        public static SpatialImplementation CurrentImplementation
+        public static SpatialImplementation Current
         {
             get
             {

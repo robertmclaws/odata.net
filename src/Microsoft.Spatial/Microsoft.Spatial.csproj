@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <AssemblyName>Microsoft.Spatial</AssemblyName>
@@ -16,12 +16,14 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <DefineConstants>$(DefineConstants);SPATIAL;PORTABLELIB;SUPPRESS_PORTABLELIB_TARGETFRAMEWORK_ATTRIBUTE</DefineConstants>
     <EnableLocalization>true</EnableLocalization>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <!-- References -->
   <Import Project="..\Build.props" />
   <!-- Generated files -->
   <ItemGroup>
-    <TextStringResource Include="Microsoft.Spatial.txt">
+    <TextStringResource Include="Resources\Microsoft.Spatial.txt">
       <ResFile>Microsoft.Spatial</ResFile>
       <Sealed>true</Sealed>
       <Parameterize>true</Parameterize>
@@ -31,146 +33,154 @@
     </TextStringResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\PlatformHelper.cs" />
-    <Compile Include="WrappedGeoJsonWriter.cs" />
-    <Compile Include="GeoJsonObjectFormatterImplementation.cs" />
-    <Compile Include="GeoJsonObjectWriter.cs" />
-    <Compile Include="GeoJsonWriterBase.cs" />
-    <Compile Include="IGeoJsonWriter.cs" />
-    <Compile Include="TypeWashedToGeographyLatLongPipeline.cs" />
-    <Compile Include="TypeWashedToGeographyLongLatPipeline.cs" />
-    <Compile Include="GeoJsonObjectReader.cs" />
+    <Compile Include="..\PlatformHelper.cs">
+      <Link>Utility\PlatformHelper.cs</Link>
+    </Compile>
+    <Compile Include="Formats\GeoJson\WrappedGeoJsonWriter.cs" />
+    <Compile Include="Formats\GeoJson\GeoJsonObjectFormatterImplementation.cs" />
+    <Compile Include="Formats\GeoJson\GeoJsonObjectWriter.cs" />
+    <Compile Include="Formats\GeoJson\GeoJsonWriterBase.cs" />
+    <Compile Include="Formats\GeoJson\IGeoJsonWriter.cs" />
+    <Compile Include="Pipeline\TypeWashedToGeographyLatLongPipeline.cs" />
+    <Compile Include="Pipeline\TypeWashedToGeographyLongLatPipeline.cs" />
+    <Compile Include="Formats\GeoJson\GeoJsonObjectReader.cs" />
     <Compile Include="CompositeKey.cs" />
-    <Compile Include="FormatterExtensions.cs" />
-    <Compile Include="GeographyPipeline.cs" />
-    <Compile Include="GeographyFullGlobe.cs" />
-    <Compile Include="GeographyCurve.cs" />
-    <Compile Include="GeographyLineString.cs" />
-    <Compile Include="GeographyMultiCurve.cs" />
-    <Compile Include="GeographyMultiLineString.cs" />
-    <Compile Include="GeographyMultiPoint.cs" />
-    <Compile Include="GeographyMultiPolygon.cs" />
-    <Compile Include="GeographyMultiSurface.cs" />
-    <Compile Include="GeographyPoint.cs" />
-    <Compile Include="GeographyPolygon.cs" />
-    <Compile Include="Geography.cs" />
-    <Compile Include="GeographyCollection.cs" />
-    <Compile Include="GeographySurface.cs" />
-    <Compile Include="GeometryPipeline.cs" />
-    <Compile Include="GeometryCollection.cs" />
-    <Compile Include="GeometryCurve.cs" />
-    <Compile Include="GeometryLineString.cs" />
-    <Compile Include="GeometryMultiCurve.cs" />
-    <Compile Include="GeometryMultiLineString.cs" />
-    <Compile Include="GeometryMultiPoint.cs" />
-    <Compile Include="GeometryMultiPolygon.cs" />
-    <Compile Include="GeometryMultiSurface.cs" />
-    <Compile Include="GeometryPoint.cs" />
-    <Compile Include="GeometryPolygon.cs" />
-    <Compile Include="GeometrySurface.cs" />
-    <Compile Include="Geometry.cs" />
-    <Compile Include="IGeographyProvider.cs" />
-    <Compile Include="IGeometryProvider.cs" />
-    <Compile Include="IShapeProvider.cs" />
-    <Compile Include="ISpatial.cs" />
-    <Compile Include="GeoJsonObjectFormatter.cs" />
-    <Compile Include="ParseErrorException.cs" />
-    <Compile Include="SpatialBuilder.cs" />
-    <Compile Include="SpatialFormatter.cs" />
-    <Compile Include="SpatialReader.cs" />
-    <Compile Include="SpatialType.cs" />
-    <Compile Include="SpatialTypeExtensions.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="CoordinateSystem.cs" />
-    <Compile Include="ActionOnDispose.cs" />
-    <Compile Include="GmlFormatter.cs" />
-    <Compile Include="WellKnownTextSqlFormatter.cs" />
-    <Compile Include="GeographyPosition.cs" />
-    <Compile Include="GeometryPosition.cs" />
-    <Compile Include="SpatialValidator.cs" />
-    <Compile Include="SpatialPipeline.cs" />
-    <Compile Include="GeographyOperationsExtensions.cs" />
-    <Compile Include="GeometryOperationsExtensions.cs" />
-    <Compile Include="SpatialImplementation.cs" />
-    <Compile Include="SpatialOperations.cs" />
-    <Compile Include="OrcasExtensions.cs" />
-    <Compile Include="DrawBoth.cs" />
-    <Compile Include="WellKnownTextSqlFormatterImplementation.cs" />
-    <Compile Include="GmlWriter.cs" />
-    <Compile Include="GmlFormatterImplementation.cs" />
-    <Compile Include="WellKnownTextLexer.cs" />
-    <Compile Include="WellKnownTextTokenType.cs" />
-    <Compile Include="DataServicesSpatialImplementation.cs" />
-    <Compile Include="GeographyBuilderImplementation.cs" />
-    <Compile Include="GeometryBuilderImplementation.cs" />
-    <Compile Include="GeographyLineStringImplementation.cs" />
-    <Compile Include="GeographyMultiLineStringImplementation.cs" />
-    <Compile Include="GeographyMultiPointImplementation.cs" />
-    <Compile Include="GeographyMultiPolygonImplementation.cs" />
-    <Compile Include="GeographyPointImplementation.cs" />
-    <Compile Include="GeographyPolygonImplementation.cs" />
-    <Compile Include="GeographyCollectionImplementation.cs" />
-    <Compile Include="GeographyHelperMethods.cs" />
-    <Compile Include="GeographyFullGlobeImplementation.cs" />
-    <Compile Include="GeometryLineStringImplementation.cs" />
-    <Compile Include="GeometryMultiLineStringImplementation.cs" />
-    <Compile Include="GeometryMultiPointImplementation.cs" />
-    <Compile Include="GeometryMultiPolygonImplementation.cs" />
-    <Compile Include="GeometryPointImplementation.cs" />
-    <Compile Include="GeometryPolygonImplementation.cs" />
-    <Compile Include="GeometryCollectionImplementation.cs" />
-    <Compile Include="DebugUtils.cs" />
-    <Compile Include="GeometryHelperMethods.cs" />
-    <Compile Include="GmlReader.cs" />
-    <Compile Include="GmlConstants.cs" />
-    <Compile Include="WellKnownTextConstants.cs" />
-    <Compile Include="SpatialTreeBuilder.cs" />
-    <Compile Include="TypeWashedPipeline.cs" />
-    <Compile Include="TypeWashedToGeometryPipeline.cs" />
-    <Compile Include="SpatialValidatorImplementation.cs" />
-    <Compile Include="ExtensionMethods.cs" />
-    <Compile Include="LexerToken.cs" />
-    <Compile Include="TextLexerBase.cs" />
-    <Compile Include="WellKnownTextSqlReader.cs" />
-    <Compile Include="WellKnownTextSqlWriter.cs" />
-    <Compile Include="GeoJsonMember.cs" />
-    <Compile Include="GeoJsonConstants.cs" />
-    <Compile Include="ForwardingSegment.cs" />
-    <Compile Include="Util.cs" />
-    <Compile Include="XmlConstants.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="InternalsVisibleTo.cs">
-      <IncludeInOpenSource>false</IncludeInOpenSource>
-    </Compile>
-    <Compile Include="$(AssemblyKeysCSharpFilePath)">
-      <IncludeInOpenSource>false</IncludeInOpenSource>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Microsoft.Spatial.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Microsoft.Spatial.cs</LastGenOutput>
-    </None>
-    <Compile Include="Microsoft.Spatial.cs">
+    <Compile Include="Extensions\FormatterExtensions.cs" />
+    <Compile Include="Geography\GeographyPipeline.cs" />
+    <Compile Include="Geography\GeographyFullGlobe.cs" />
+    <Compile Include="Geography\GeographyCurve.cs" />
+    <Compile Include="Geography\GeographyLineString.cs" />
+    <Compile Include="Geography\GeographyMultiCurve.cs" />
+    <Compile Include="Geography\GeographyMultiLineString.cs" />
+    <Compile Include="Geography\GeographyMultiPoint.cs" />
+    <Compile Include="Geography\GeographyMultiPolygon.cs" />
+    <Compile Include="Geography\GeographyMultiSurface.cs" />
+    <Compile Include="Geography\GeographyPoint.cs" />
+    <Compile Include="Geography\GeographyPolygon.cs" />
+    <Compile Include="Geography\Geography.cs" />
+    <Compile Include="Geography\GeographyCollection.cs" />
+    <Compile Include="Geography\GeographySurface.cs" />
+    <Compile Include="Geometry\GeometryPipeline.cs" />
+    <Compile Include="Geometry\GeometryCollection.cs" />
+    <Compile Include="Geometry\GeometryCurve.cs" />
+    <Compile Include="Geometry\GeometryLineString.cs" />
+    <Compile Include="Geometry\GeometryMultiCurve.cs" />
+    <Compile Include="Geometry\GeometryMultiLineString.cs" />
+    <Compile Include="Geometry\GeometryMultiPoint.cs" />
+    <Compile Include="Geometry\GeometryMultiPolygon.cs" />
+    <Compile Include="Geometry\GeometryMultiSurface.cs" />
+    <Compile Include="Geometry\GeometryPoint.cs" />
+    <Compile Include="Geometry\GeometryPolygon.cs" />
+    <Compile Include="Geometry\GeometrySurface.cs" />
+    <Compile Include="Geometry\Geometry.cs" />
+    <Compile Include="Interfaces\IGeographyProvider.cs" />
+    <Compile Include="Interfaces\IGeometryProvider.cs" />
+    <Compile Include="Interfaces\IShapeProvider.cs" />
+    <Compile Include="Interfaces\ISpatial.cs" />
+    <Compile Include="Formats\GeoJson\GeoJsonObjectFormatter.cs" />
+    <Compile Include="Resources\Microsoft.Spatial.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Microsoft.Spatial.tt</DependentUpon>
-      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
     </Compile>
-    <None Include="Parameterized.Microsoft.Spatial.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Parameterized.Microsoft.Spatial.cs</LastGenOutput>
-    </None>
-    <Compile Include="Parameterized.Microsoft.Spatial.cs">
+    <Compile Include="Resources\Parameterized.Microsoft.Spatial.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Parameterized.Microsoft.Spatial.tt</DependentUpon>
-      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
     </Compile>
+    <Compile Include="Utility\ParseErrorException.cs" />
+    <Compile Include="Pipeline\SpatialBuilder.cs" />
+    <Compile Include="Formats\SpatialFormatter.cs" />
+    <Compile Include="Formats\SpatialReader.cs" />
+    <Compile Include="SpatialType.cs" />
+    <Compile Include="Extensions\SpatialTypeExtensions.cs" />
+    <Compile Include="Properties\GlobalSuppressions.cs" />
+    <Compile Include="CoordinateSystem.cs" />
+    <Compile Include="Utility\ActionOnDispose.cs" />
+    <Compile Include="Formats\Gml\GmlFormatter.cs" />
+    <Compile Include="Formats\WellKnownText\WellKnownTextSqlFormatter.cs" />
+    <Compile Include="Geography\GeographyPosition.cs" />
+    <Compile Include="Geometry\GeometryPosition.cs" />
+    <Compile Include="Pipeline\SpatialValidator.cs" />
+    <Compile Include="Pipeline\SpatialPipeline.cs" />
+    <Compile Include="Extensions\GeographyOperationsExtensions.cs" />
+    <Compile Include="Extensions\GeometryOperationsExtensions.cs" />
+    <Compile Include="SpatialImplementation.cs" />
+    <Compile Include="SpatialOperations.cs" />
+    <Compile Include="Extensions\OrcasExtensions.cs" />
+    <Compile Include="Formats\DrawBoth.cs" />
+    <Compile Include="Formats\WellKnownText\WellKnownTextSqlFormatterImplementation.cs" />
+    <Compile Include="Formats\Gml\GmlWriter.cs" />
+    <Compile Include="Formats\Gml\GmlFormatterImplementation.cs" />
+    <Compile Include="Formats\WellKnownText\WellKnownTextLexer.cs" />
+    <Compile Include="Formats\WellKnownText\WellKnownTextTokenType.cs" />
+    <Compile Include="DataServicesSpatialImplementation.cs" />
+    <Compile Include="Geography\GeographyBuilderImplementation.cs" />
+    <Compile Include="Geometry\GeometryBuilderImplementation.cs" />
+    <Compile Include="Geography\GeographyLineStringImplementation.cs" />
+    <Compile Include="Geography\GeographyMultiLineStringImplementation.cs" />
+    <Compile Include="Geography\GeographyMultiPointImplementation.cs" />
+    <Compile Include="Geography\GeographyMultiPolygonImplementation.cs" />
+    <Compile Include="Geography\GeographyPointImplementation.cs" />
+    <Compile Include="Geography\GeographyPolygonImplementation.cs" />
+    <Compile Include="Geography\GeographyCollectionImplementation.cs" />
+    <Compile Include="Extensions\GeographyExtensions.cs" />
+    <Compile Include="Geography\GeographyFullGlobeImplementation.cs" />
+    <Compile Include="Geometry\GeometryLineStringImplementation.cs" />
+    <Compile Include="Geometry\GeometryMultiLineStringImplementation.cs" />
+    <Compile Include="Geometry\GeometryMultiPointImplementation.cs" />
+    <Compile Include="Geometry\GeometryMultiPolygonImplementation.cs" />
+    <Compile Include="Geometry\GeometryPointImplementation.cs" />
+    <Compile Include="Geometry\GeometryPolygonImplementation.cs" />
+    <Compile Include="Geometry\GeometryCollectionImplementation.cs" />
+    <Compile Include="Utility\DebugUtils.cs" />
+    <Compile Include="Geometry\GeometryHelperMethods.cs" />
+    <Compile Include="Formats\Gml\GmlReader.cs" />
+    <Compile Include="Formats\Gml\GmlConstants.cs" />
+    <Compile Include="Formats\WellKnownText\WellKnownTextConstants.cs" />
+    <Compile Include="Pipeline\SpatialTreeBuilder.cs" />
+    <Compile Include="Pipeline\TypeWashedPipeline.cs" />
+    <Compile Include="Pipeline\TypeWashedToGeometryPipeline.cs" />
+    <Compile Include="Pipeline\SpatialValidatorImplementation.cs" />
+    <Compile Include="Extensions\ExtensionMethods.cs" />
+    <Compile Include="Formats\LexerToken.cs" />
+    <Compile Include="Formats\TextLexerBase.cs" />
+    <Compile Include="Formats\WellKnownText\WellKnownTextSqlReader.cs" />
+    <Compile Include="Formats\WellKnownText\WellKnownTextSqlWriter.cs" />
+    <Compile Include="Formats\GeoJson\GeoJsonMember.cs" />
+    <Compile Include="Formats\GeoJson\GeoJsonConstants.cs" />
+    <Compile Include="Pipeline\ForwardingSegment.cs" />
+    <Compile Include="Utility\Util.cs" />
+    <Compile Include="Utility\XmlConstants.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\InternalsVisibleTo.cs">
+      <IncludeInOpenSource>false</IncludeInOpenSource>
+    </Compile>
+    <Compile Include="D:\GitHub\odata.net\src\AssemblyInfo\AssemblyKeys.cs">
+      <IncludeInOpenSource>false</IncludeInOpenSource>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Microsoft.Spatial.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Microsoft.Spatial.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Resources\Parameterized.Microsoft.Spatial.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Parameterized.Microsoft.Spatial.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(BuildExtensionsPath)\Portable.targets" />
+  <Import Project="..\..\sln\packages\StyleCop.MSBuild.4.7.55.0\build\StyleCop.MSBuild.Targets" Condition="Exists('..\..\sln\packages\StyleCop.MSBuild.4.7.55.0\build\StyleCop.MSBuild.Targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\sln\packages\StyleCop.MSBuild.4.7.55.0\build\StyleCop.MSBuild.Targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\sln\packages\StyleCop.MSBuild.4.7.55.0\build\StyleCop.MSBuild.Targets'))" />
+  </Target>
 </Project>

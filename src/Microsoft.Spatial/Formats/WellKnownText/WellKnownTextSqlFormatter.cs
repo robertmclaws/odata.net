@@ -23,7 +23,7 @@ namespace Microsoft.Spatial
         /// <returns>Returns the created WellKnownTextSqlFormatter implementation.</returns>
         public static WellKnownTextSqlFormatter Create()
         {
-            return SpatialImplementation.CurrentImplementation.CreateWellKnownTextSqlFormatter();
+            return SpatialImplementation.Current.CreateWellKnownTextSqlFormatter();
         }
 
         /// <summary>Creates the implementation of the formatter and checks whether the specified formatter has Z.</summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Spatial
         /// <param name="allowOnlyTwoDimensions">Restricts the formatter to allow only two dimensions.</param>
         public static WellKnownTextSqlFormatter Create(bool allowOnlyTwoDimensions)
         {
-            return SpatialImplementation.CurrentImplementation.CreateWellKnownTextSqlFormatter(allowOnlyTwoDimensions);
+            return SpatialImplementation.Current.CreateWellKnownTextSqlFormatter(allowOnlyTwoDimensions);
         }
     }
 }
